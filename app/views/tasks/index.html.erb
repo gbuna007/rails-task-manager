@@ -1,9 +1,9 @@
-<h1>My Tasks</h1>
+<h1 class="mb-2">My Tasks</h1>
 
-<ul>
+<ul class="ps-1">
 <% @tasks.each do |task| %>
-  <p><%= link_to task.title, task_path(task) %> - <%= link_to "Delete", task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></p>
+  <p><input type="checkbox" <%= "checked" if task.completed == true %> class="pe-none"> - <%= link_to task.title, task_path(task) %> - <%= link_to '<i class="bi bi-trash text-danger"></i>'.html_safe, task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></p>
 <% end %>
 </ul>
 
-<%= link_to 'Add a new task', new_task_path %>
+<%= link_to '<p class="btn btn-primary">Add a new task<p/>'.html_safe, new_task_path %>
