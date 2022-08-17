@@ -1,16 +1,4 @@
 <h1>Edit <%= @task.title %></h1>
-<%= form_for(@task) do |f| %>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %>
-  <br><br>
-  <%= f.label :details %><br>
-  <%= f.text_area :details, size: "70x5" %>
-  <br><br>
-  <%= f.label :completed, 'Task completed?' %><br>
-  <%= f.check_box :completed %>
-  <br><br>
-
-  <%= f.submit %>
-<% end %>
-  <br><br>
+<%= render 'form' %>
+<br><br>
 <%= link_to 'Back to list', tasks_path %>
